@@ -8,11 +8,31 @@ import ProfileEdit from './pages/ProfileEdit';
 import NotFound from './pages/NotFound';
 
 class App extends React.Component {
+  state = {
+    inputName: '',
+  };
+
+  handleChange = ({ target }) => {
+    this.setState({
+      inputName: target.value,
+    });
+  };
+
   render() {
+    const { inputName, loading } = this.state;
     return (
       <>
         <div data-testid="page-login">
-          <Route exact path="/" component={ Login } />
+          <Route
+            exact
+            path="/"
+            render={ (props) => (<Login
+              handleChange={ this.handleChange }
+              inputName={ inputName }
+              loading={ loading }
+              { ...props }
+            />) }
+          />
         </div>
         <div data-testid="page-search">
           <Route exact path="/search" component={ Search } />
