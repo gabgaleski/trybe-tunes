@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes, { shape } from 'prop-types';
-import { addSong } from '../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
 
 class MusicCard extends React.Component {
   state = {
@@ -8,8 +8,13 @@ class MusicCard extends React.Component {
     saveSong: [],
   };
 
-  componentDidMount() {
-    this.saveMusic();
+  async componentDidMount() {
+    const songs = await getFavoriteSongs();
+    if (songs) {
+      this.setState({
+        saveSong: songs,
+      });
+    }
   }
 
   saveMusic = async (music) => {
@@ -48,7 +53,7 @@ class MusicCard extends React.Component {
                 id={ music.trackId }
                 name="inputCheck"
                 type="checkbox"
-                checked={ saveSong.includes(music) }
+                checked={ saveSong.some(({ trackId }) => trackId === music.trackId) }
                 onChange={ () => this.saveMusic(music) }
               />
             </label>
