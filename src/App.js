@@ -10,7 +10,6 @@ import NotFound from './pages/NotFound';
 class App extends React.Component {
   state = {
     inputName: '',
-    inputSearch: '',
   };
 
   handleChange = ({ target }) => {
@@ -20,7 +19,7 @@ class App extends React.Component {
   };
 
   render() {
-    const { inputName, loading, inputSearch } = this.state;
+    const { inputName } = this.state;
     return (
       <>
         <div data-testid="page-login">
@@ -30,7 +29,6 @@ class App extends React.Component {
             render={ (props) => (<Login
               handleChange={ this.handleChange }
               inputName={ inputName }
-              loading={ loading }
               { ...props }
             />) }
           />
@@ -39,10 +37,7 @@ class App extends React.Component {
           <Route
             exact
             path="/search"
-            render={ () => (<Search
-              inputSearch={ inputSearch }
-              handleChange={ this.handleChange }
-            />) }
+            component={ Search }
           />
         </div>
         <div data-testid="page-album">
