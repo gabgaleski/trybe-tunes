@@ -10,16 +10,17 @@ import NotFound from './pages/NotFound';
 class App extends React.Component {
   state = {
     inputName: '',
+    inputSearch: '',
   };
 
   handleChange = ({ target }) => {
     this.setState({
-      inputName: target.value,
+      [target.name]: target.value,
     });
   };
 
   render() {
-    const { inputName, loading } = this.state;
+    const { inputName, loading, inputSearch } = this.state;
     return (
       <>
         <div data-testid="page-login">
@@ -35,7 +36,14 @@ class App extends React.Component {
           />
         </div>
         <div data-testid="page-search">
-          <Route exact path="/search" component={ Search } />
+          <Route
+            exact
+            path="/search"
+            render={ () => (<Search
+              inputSearch={ inputSearch }
+              handleChange={ this.handleChange }
+            />) }
+          />
         </div>
         <div data-testid="page-album">
           <Route exact path="/album/:id" component={ Album } />
