@@ -6,6 +6,7 @@ import Album from './pages/Album';
 import Favorites from './pages/Favorites';
 import ProfileEdit from './pages/ProfileEdit';
 import NotFound from './pages/NotFound';
+import Profile from './pages/Profile';
 
 class App extends React.Component {
   state = {
@@ -41,13 +42,13 @@ class App extends React.Component {
           />
         </div>
         <div data-testid="page-album">
-          <Route exact path="/album/:id" component={ Album } />
+          <Route exact path="/album/:id" render={ (props) => <Album { ...props } /> } />
         </div>
         <div data-testid="page-favorites">
           <Route exact path="/favorites" component={ Favorites } />
         </div>
         <div data-testid="page-profile">
-          <Route exact path="/profile" component={ Favorites } />
+          <Route exact path="/profile" component={ Profile } />
         </div>
         <div data-testid="page-profile-edit">
           <Route exact path="/profile/edit" component={ ProfileEdit } />
