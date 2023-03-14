@@ -1,11 +1,35 @@
 import React from 'react';
 import PropTypes, { shape } from 'prop-types';
+import { addSong } from '../services/favoriteSongsAPI';
 
 class MusicCard extends React.Component {
+  state = {
+    loading: false,
+    saveSong: [],
+  };
+
+  componentDidMount() {
+    this.saveMusic();
+  }
+
+  saveMusic = async (music) => {
+    this.setState((previus) => ({
+      loading: true,
+      saveSong: [...previus.saveSong, music],
+    }));
+    const { saveSong } = this.state;
+    await addSong(saveSong);
+    this.setState({
+      loading: false,
+    });
+  };
+
   render() {
     const { arrayMusic } = this.props;
+    const { loading, saveSong } = this.state;
     return (
       <div>
+        {loading && <span>Carregando...</span>}
         {arrayMusic.map((music) => (
           <div key={ music.trackId }>
             <p>{music.trackName}</p>
@@ -15,6 +39,19 @@ class MusicCard extends React.Component {
               <code>audio</code>
               .
             </audio>
+            <label
+              htmlFor={ music.trackId }
+              data-testid={ `checkbox-music-${music.trackId}` }
+            >
+              Favorita
+              <input
+                id={ music.trackId }
+                name="inputCheck"
+                type="checkbox"
+                checked={ saveSong.includes(music) }
+                onChange={ () => this.saveMusic(music) }
+              />
+            </label>
           </div>
         ))}
       </div>
