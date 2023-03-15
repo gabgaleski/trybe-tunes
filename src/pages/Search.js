@@ -74,7 +74,7 @@ class Search extends React.Component {
       </form>);
 
     return (
-      <div>
+      <div data-testid="page-search">
         <Header />
         {loading ? carregando : forms}
         {title}

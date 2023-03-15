@@ -26,7 +26,7 @@ class Login extends React.Component {
     const { handleChange, inputName } = this.props;
     const { loading } = this.state;
     return (
-      <div>
+      <div data-testid="page-login">
         <h1>Login</h1>
         <input
           data-testid="login-name-input"

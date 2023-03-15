@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Login from './pages/Login';
 import Search from './pages/Search';
 import Album from './pages/Album';
@@ -22,41 +22,28 @@ class App extends React.Component {
   render() {
     const { inputName } = this.state;
     return (
-      <>
-        <div data-testid="page-login">
-          <Route
-            exact
-            path="/"
-            render={ (props) => (<Login
-              handleChange={ this.handleChange }
-              inputName={ inputName }
-              { ...props }
-            />) }
-          />
-        </div>
-        <div data-testid="page-search">
-          <Route
-            exact
-            path="/search"
-            component={ Search }
-          />
-        </div>
-        <div data-testid="page-album">
-          <Route exact path="/album/:id" render={ (props) => <Album { ...props } /> } />
-        </div>
-        <div data-testid="page-favorites">
-          <Route exact path="/favorites" component={ Favorites } />
-        </div>
-        <div data-testid="page-profile">
-          <Route exact path="/profile" component={ Profile } />
-        </div>
-        <div data-testid="page-profile-edit">
-          <Route exact path="/profile/edit" component={ ProfileEdit } />
-        </div>
-        <div data-testid="page-not-found">
-          <Route exact path="*" component={ NotFound } />
-        </div>
-      </>
+      <Switch>
+
+        <Route
+          exact
+          path="/"
+          render={ (props) => (<Login
+            handleChange={ this.handleChange }
+            inputName={ inputName }
+            { ...props }
+          />) }
+        />
+        <Route
+          exact
+          path="/search"
+          component={ Search }
+        />
+        <Route exact path="/album/:id" render={ (props) => <Album { ...props } /> } />
+        <Route exact path="/favorites" component={ Favorites } />
+        <Route exact path="/profile" component={ Profile } />
+        <Route exact path="/profile/edit" component={ ProfileEdit } />
+        <Route exact path="*" component={ NotFound } />
+      </Switch>
     );
   }
 }

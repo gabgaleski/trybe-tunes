@@ -30,7 +30,7 @@ class Album extends React.Component {
   render() {
     const { id, arrayMusic, collectionName, artistName } = this.state;
     return (
-      <div>
+      <div data-testid="page-album">
         <Header />
         <h3 id={ id } data-testid="album-name">{collectionName}</h3>
         <p data-testid="artist-name">{artistName}</p>
