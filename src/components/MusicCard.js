@@ -8,24 +8,29 @@ class MusicCard extends React.Component {
     saveSong: [],
   };
 
-  async componentDidMount() {
+  componentDidMount() {
+    this.getSongAPI();
+  }
+
+  getSongAPI = async () => {
     const songs = await getFavoriteSongs();
-    if (songs) {
+    if (songs.length > 0) {
       this.setState({
         saveSong: songs,
       });
     }
-  }
+  };
 
   saveMusic = async (music) => {
-    this.setState((previus) => ({
+    this.setState({
       loading: true,
-      saveSong: [...previus.saveSong, music],
-    }));
+    });
     const { saveSong } = this.state;
-    await addSong(saveSong);
+    const saveSongNew = [...saveSong, music];
+    await addSong(music);
     this.setState({
       loading: false,
+      saveSong: saveSongNew,
     });
   };
 

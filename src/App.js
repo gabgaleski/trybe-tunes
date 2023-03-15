@@ -54,7 +54,7 @@ class App extends React.Component {
           <Route exact path="/profile/edit" component={ ProfileEdit } />
         </div>
         <div data-testid="page-not-found">
-          <Route path="*" component={ NotFound } />
+          <Route exact path="*" component={ NotFound } />
         </div>
       </>
     );
