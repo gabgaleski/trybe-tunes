@@ -37,7 +37,6 @@ class MusicCard extends React.Component {
   render() {
     const { arrayMusic } = this.props;
     const { loading, saveSong } = this.state;
-    console.log(loading);
     return (
       <div>
         {loading ? <Loading />

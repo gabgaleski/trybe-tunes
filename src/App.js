@@ -23,7 +23,6 @@ class App extends React.Component {
     const { inputName } = this.state;
     return (
       <Switch>
-
         <Route
           exact
           path="/"
