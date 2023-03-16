@@ -26,26 +26,28 @@ class Login extends React.Component {
     const { handleChange, inputName } = this.props;
     const { loading } = this.state;
     return (
-      <div data-testid="page-login">
-        <h1>Login</h1>
-        <input
-          data-testid="login-name-input"
-          name="inputName"
-          type="text"
-          placeholder="Qual é o seu nome?"
-          onChange={ handleChange }
-          value={ inputName }
-        />
-        <button
-          type="button"
-          data-testid="login-submit-button"
-          disabled={ (inputName.length < maxLength) }
-          onClick={ this.changePage }
-        >
-          Entrar
+      <div className="login-container" data-testid="page-login">
+        <div className="div-login">
+          <h1>Login</h1>
+          <input
+            data-testid="login-name-input"
+            name="inputName"
+            type="text"
+            placeholder="Qual é o seu nome?"
+            onChange={ handleChange }
+            value={ inputName }
+          />
+          <button
+            type="button"
+            data-testid="login-submit-button"
+            disabled={ (inputName.length < maxLength) }
+            onClick={ this.changePage }
+          >
+            Entrar
 
-        </button>
-        {loading && <span>Carregando...</span>}
+          </button>
+          {loading && <span>Carregando...</span>}
+        </div>
       </div>
     );
   }
