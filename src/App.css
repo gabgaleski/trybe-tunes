@@ -17,7 +17,170 @@
   box-shadow: 0 0 26px rgba(68, 73, 85, 0.2);
   display: flex;
   flex-direction: column;
-  height: 270px;
+  height: 450px;
   justify-content: center;
   width: 750px;
+}
+
+.div-login h1 {
+  color: #00d5e2;
+}
+
+.title-span {
+  color: #003be5;
+}
+
+.div-login input {
+  border: 1px solid #003be5;
+  border-radius: 100px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 600;
+  height: 40px;
+  margin-bottom: 15px;
+  text-align: center;
+  width: 400px;
+}
+
+.div-login input::placeholder {
+  color: #003be5;
+}
+
+.div-login button {
+  background: #003be5;
+  border-radius: 100px;
+  box-sizing: border-box;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  height: 40px;
+  text-align: center;
+  width: 400px;
+}
+
+.header-class {
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  justify-content: space-between;
+  margin: 25px 0 10px;
+  text-align: center;
+  width: 15vw;
+}
+
+.links-container {
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  justify-content: space-between;
+}
+
+.links-div {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.links {
+  color: #444955;
+  font-family: monospace;
+  font-size: 17px;
+  text-decoration: none;
+}
+
+.links:hover {
+  font-size: 18px;
+}
+
+.search-container {
+  display: flex;
+}
+
+.search-form {
+  align-items: center;
+  background: linear-gradient(100.66deg, #003be5 30%, #00d5e2 70%);
+  display: flex;
+  height: 30vh;
+  justify-content: center;
+  width: 85vw;
+}
+
+.search-form input {
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-radius: 23px;
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
+  height: 40px;
+  margin-right: 10px;
+  padding-left: 10px;
+  width: 400px;
+}
+
+.search-form input::placeholder {
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.search-form button {
+  background: #00d5e2;
+  border: none;
+  border-radius: 23px;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  height: 40px;
+  text-transform: uppercase;
+  width: 110px;
+}
+
+.cards-container {
+  background: #eff3f9;
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  width: 85vw;
+}
+
+.album-result {
+  color: #003be5;
+  font-size: 20px;
+  font-style: italic;
+  text-align: center;
+}
+
+.cards-division {
+  background: #eff3f9;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 20px 30px 5px;
+}
+
+.card img {
+  border-radius: 10px;
+  height: 200px;
+  width: 200px;
+}
+
+.links-musics {
+  background-color: rgb(12, 41, 95);
+  border: 1px solid black;
+  color: white;
+  font-family: monospace;
+  font-size: 17px;
+  text-align: center;
+  text-decoration: none;
+  width: 85px;
+}
+
+.links-musics:hover {
+  font-size: 18px;
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
+import Loading from '../components/Loading';
 
 class Search extends React.Component {
   state = {
@@ -29,32 +30,32 @@ class Search extends React.Component {
           album: arrayObj,
           title:
  arrayObj.length > 0
-   ? <p>{`Resultado de álbuns de: ${inputSearch}`}</p>
-   : <p>Nenhum álbum foi encontrado</p>,
+   ? <p className="album-result">{`Resultado de álbuns de: ${inputSearch}`}</p>
+   : <p className="album-result">Nenhum álbum foi encontrado</p>,
         });
       },
     );
   };
 
   render() {
-    const carregando = <span>Carregando...</span>;
     const { inputSearch, loading, title, album } = this.state;
     const cards = album.map((element) => (
-      <div key={ element.collectionId }>
+      <div className="card" key={ element.collectionId }>
         <img alt="Imagem do album" src={ element.artworkUrl100 } />
         <h3>{element.collectionName}</h3>
         <p>{element.artistName}</p>
         <Link
+          className="links-musics"
           to={ `/album/${element.collectionId}` }
           data-testid={ `link-to-album-${element.collectionId}` }
         >
-          Music
+          Musics
 
         </Link>
       </div>));
 
     const forms = (
-      <form>
+      <form className="search-form">
         <input
           name="inputSearch"
           placeholder="Nome do Artista"
@@ -69,16 +70,22 @@ class Search extends React.Component {
           disabled={ (inputSearch.length < 2) }
           onClick={ this.searchChange }
         >
-          Pesquisar
+          Procurar
         </button>
       </form>);
-
+    if (loading) return <Loading />;
     return (
-      <div data-testid="page-search">
+      <div className="search-container" data-testid="page-search">
         <Header />
-        {loading ? carregando : forms}
-        {title}
-        {cards}
+        <div>
+          {forms}
+          <div className="cards-container">
+            {title}
+            <div className="cards-division">
+              {cards}
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

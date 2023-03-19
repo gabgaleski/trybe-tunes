@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { createUser } from '../services/userAPI';
+import logo from '../img/logo.png';
+import Loading from '../components/Loading';
 
 class Login extends React.Component {
   state = {
@@ -25,10 +27,16 @@ class Login extends React.Component {
     const maxLength = 3;
     const { handleChange, inputName } = this.props;
     const { loading } = this.state;
+    if (loading) return <Loading />;
     return (
       <div className="login-container" data-testid="page-login">
         <div className="div-login">
-          <h1>Login</h1>
+          <img src={ logo } alt="Logo" />
+          <h1>
+            Trybe
+            {' '}
+            <span className="title-span">tunes</span>
+          </h1>
           <input
             data-testid="login-name-input"
             name="inputName"
@@ -46,7 +54,6 @@ class Login extends React.Component {
             Entrar
 
           </button>
-          {loading && <span>Carregando...</span>}
         </div>
       </div>
     );
