@@ -32,34 +32,42 @@ class Favorites extends React.Component {
   render() {
     const { loading, saveSong } = this.state;
     return (
-      <div data-testid="page-favorites">
+      <div className="search-container" data-testid="page-favorites">
         <Header />
-        <h1>Favorites</h1>
-        {loading ? <Loading />
-          : saveSong.map((music) => (
-            <div key={ music.trackId }>
-              <p>{music.trackName}</p>
-              <audio data-testid="audio-component" src={ music.previewUrl } controls>
-                <track kind="captions" />
-                O seu navegador não suporta o elemento
-                <code>audio</code>
-                .
-              </audio>
-              <label
-                htmlFor={ music.trackId }
-                data-testid={ `checkbox-music-${music.trackId}` }
-              >
-                Favorita
-                <input
-                  id={ music.trackId }
-                  name={ music.trackId }
-                  type="checkbox"
-                  checked={ saveSong.some(({ trackId }) => trackId === music.trackId) }
-                  onChange={ () => this.saveMusic(music) }
-                />
-              </label>
-            </div>
-          ))}
+        <div>
+          <div className="header-favorite">
+            <h1>Musicas Favorites</h1>
+          </div>
+          <div className="music-card-container">
+            {loading ? <Loading />
+              : saveSong.map((music) => (
+                <div className="music" key={ music.trackId }>
+                  <p>{music.trackName}</p>
+                  <audio data-testid="audio-component" src={ music.previewUrl } controls>
+                    <track kind="captions" />
+                    O seu navegador não suporta o elemento
+                    <code>audio</code>
+                    .
+                  </audio>
+                  <label
+                    htmlFor={ music.trackId }
+                    data-testid={ `checkbox-music-${music.trackId}` }
+                  >
+                    Favorita
+                    <input
+                      id={ music.trackId }
+                      name={ music.trackId }
+                      type="checkbox"
+                      checked={
+                        saveSong.some(({ trackId }) => trackId === music.trackId)
+                      }
+                      onChange={ () => this.saveMusic(music) }
+                    />
+                  </label>
+                </div>
+              ))}
+          </div>
+        </div>
       </div>
     );
   }

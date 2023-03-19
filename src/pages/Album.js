@@ -24,17 +24,25 @@ class Album extends React.Component {
       arrayMusic: get.filter((_music, index) => index > 0),
       collectionName: get[0].collectionName,
       artistName: get[0].artistName,
+      albumImg: get[0].artworkUrl100,
     });
   };
 
   render() {
-    const { id, arrayMusic, collectionName, artistName } = this.state;
+    const { id, arrayMusic, collectionName, artistName, albumImg } = this.state;
     return (
-      <div data-testid="page-album">
+      <div className="search-container" data-testid="page-album">
         <Header />
-        <h3 id={ id } data-testid="album-name">{collectionName}</h3>
-        <p data-testid="artist-name">{artistName}</p>
-        <MusicCard arrayMusic={ arrayMusic } />
+        <div>
+          <div className="header-album">
+            <img src={ albumImg } alt="Imagem do album" />
+            <div className="infos-album">
+              <h3 id={ id } data-testid="album-name">{collectionName}</h3>
+              <p data-testid="artist-name">{artistName}</p>
+            </div>
+          </div>
+          <MusicCard arrayMusic={ arrayMusic } />
+        </div>
       </div>
     );
   }

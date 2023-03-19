@@ -37,11 +37,12 @@ class MusicCard extends React.Component {
   render() {
     const { arrayMusic } = this.props;
     const { loading, saveSong } = this.state;
+    if (loading) return <Loading />;
     return (
-      <div>
-        {loading ? <Loading />
-          : arrayMusic.map((music) => (
-            <div key={ music.trackId }>
+      <div className="music-card-container">
+        {arrayMusic.map((music) => (
+          <div key={ music.trackId }>
+            <div className="music">
               <p>{music.trackName}</p>
               <audio data-testid="audio-component" src={ music.previewUrl } controls>
                 <track kind="captions" />
@@ -63,7 +64,9 @@ class MusicCard extends React.Component {
                 />
               </label>
             </div>
-          ))}
+            <hr />
+          </div>
+        ))}
       </div>
     );
   }
