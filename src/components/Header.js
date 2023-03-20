@@ -34,6 +34,10 @@ class Header extends React.Component {
   render() {
     const { loading, name } = this.state;
     const carregando = <span>Carregando...</span>;
+    const headerName = (<div className="header-name">
+      <img src={ perfil } alt="Icone de perfil" />
+      <p data-testid="header-user-name">{name}</p>
+    </div>);
     return (
       <header className="header-class" data-testid="header-component">
         <div>
@@ -79,10 +83,7 @@ class Header extends React.Component {
           </div>
         </div>
         {loading ? carregando
-          : <div className="header-name">
-            <img src={ perfil } alt="Icone de perfil" />
-            <p data-testid="header-user-name">{name}</p>
-            </div>}
+          : headerName }
       </header>
     );
   }
