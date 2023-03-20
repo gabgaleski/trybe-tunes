@@ -263,3 +263,36 @@ hr {
   justify-content: center;
   width: 85vw;
 }
+
+.form-profile {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-card {
+  margin: 10px;
+}
+
+.form-profile div h3 {
+  margin-bottom: 0;
+}
+
+.form-profile div {
+  margin-top: 20px;
+}
+
+.link-profileEdit {
+  background: #003be5;
+  border-radius: 100px;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 10px 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.div-linkProfile {
+  margin-top: 30px;
+}
