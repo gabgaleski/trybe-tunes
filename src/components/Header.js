@@ -78,7 +78,11 @@ class Header extends React.Component {
             </Link>
           </div>
         </div>
-        {loading ? carregando : <p data-testid="header-user-name">{name}</p>}
+        {loading ? carregando
+          : <div className="header-name">
+            <img src={ perfil } alt="Icone de perfil" />
+            <p data-testid="header-user-name">{name}</p>
+            </div>}
       </header>
     );
   }

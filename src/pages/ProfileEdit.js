@@ -61,51 +61,56 @@ class ProfileEdit extends React.Component {
     const isValid = email.length > 0
     && name.length > 0 && image.length > 0 && description.length > 0;
     const formInfo = (
-      <form>
-        <label htmlFor="image">
-          Foto
-          <input
-            id="image"
-            name="image"
-            data-testid="edit-input-image"
-            type="text"
-            value={ image }
-            onChange={ this.handleChange }
-          />
-        </label>
-        <label htmlFor="name">
-          Nome
-          <input
-            placeholder="Alterar Nome"
-            id="name"
-            name="name"
-            data-testid="edit-input-name"
-            type="text"
-            value={ name }
-            onChange={ this.handleChange }
-          />
-        </label>
-        <label htmlFor="email">
-          Email
-          <input
-            placeholder="Alterar Email"
-            id="email"
-            name="email"
-            data-testid="edit-input-email"
-            type="email"
-            value={ email }
-            onChange={ this.handleChange }
-          />
-        </label>
-        <p>Descrição</p>
-        <textarea
-          placeholder="Alterar Descrição"
-          id="description"
-          name="description"
-          data-testid="edit-input-description"
-          value={ description }
-          onChange={ this.handleChange }
-        />
+      <form className="form-edit-profile">
+        <div>
+          <label htmlFor="image">
+            Foto
+            <input
+              placeholder="URL da foto"
+              id="image"
+              name="image"
+              data-testid="edit-input-image"
+              type="text"
+              value={ image }
+              onChange={ this.handleChange }
+            />
+          </label>
+          <label htmlFor="name">
+            Nome
+            <input
+              placeholder="Alterar Nome"
+              id="name"
+              name="name"
+              data-testid="edit-input-name"
+              type="text"
+              value={ name }
+              onChange={ this.handleChange }
+            />
+          </label>
+          <label htmlFor="email">
+            Email
+            <input
+              placeholder="Alterar Email"
+              id="email"
+              name="email"
+              data-testid="edit-input-email"
+              type="email"
+              value={ email }
+              onChange={ this.handleChange }
+            />
+          </label>
+          <label>
+            Descrição
+            <textarea
+              placeholder="Alterar Descrição"
+              id="description"
+              name="description"
+              data-testid="edit-input-description"
+              value={ description }
+              onChange={ this.handleChange }
+            />
+          </label>
+        </div>
         <button
           type="button"
           disabled={ !isValid }
@@ -118,13 +123,17 @@ class ProfileEdit extends React.Component {
       </form>);
 
     return (
-      <div data-testid="page-profile-edit">
+      <div className="search-container" data-testid="page-profile-edit">
         <Header />
-        <h1>Profile</h1>
-        {
-          loading
-            ? <Loading /> : formInfo
-        }
+        <div>
+          <div className="header-favorite">
+            <h1>Profile Edit</h1>
+          </div>
+          {
+            loading
+              ? <Loading /> : formInfo
+          }
+        </div>
       </div>
     );
   }

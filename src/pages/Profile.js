@@ -26,7 +26,7 @@ class Profile extends React.Component {
     const { userInfo, loading } = this.state;
     const { name, image, email, description } = userInfo;
     const form = (
-      <form className="form-profile">
+      <form className="form-edit-profile">
         <div>
           <img data-testid="profile-image" src={ image } alt="Foto de perfil" />
           <div className="info-card">
@@ -39,7 +39,7 @@ class Profile extends React.Component {
           </div>
           <div className="info-card">
             <h3>Descrição</h3>
-            <p>{description}</p>
+            <p className="profile-description">{description}</p>
           </div>
           <div className="div-linkProfile">
             <Link className="link-profileEdit" to="/profile/edit">Editar perfil</Link>

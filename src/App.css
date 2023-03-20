@@ -4,6 +4,7 @@
 
 .login-container {
   align-items: center;
+  background: linear-gradient(100.66deg, #003be5 30%, #00d5e2 70%);
   display: flex;
   height: 100vh;
   justify-content: center;
@@ -34,6 +35,7 @@
   border: 1px solid #003be5;
   border-radius: 100px;
   box-sizing: border-box;
+  color: #003be5;
   font-size: 16px;
   font-weight: 600;
   height: 40px;
@@ -264,21 +266,27 @@ hr {
   width: 85vw;
 }
 
-.form-profile {
+.header-name {
   align-items: center;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+}
+
+.header-name img {
+  height: 25px;
+  padding-right: 10px;
+  width: 25px;
 }
 
 .info-card {
   margin: 10px;
 }
 
-.form-profile div h3 {
+.form-edit-profile div h3 {
   margin-bottom: 0;
 }
 
-.form-profile div {
+.form-edit-profile div {
   margin-top: 20px;
 }
 
@@ -295,4 +303,58 @@ hr {
 
 .div-linkProfile {
   margin-top: 30px;
+}
+
+.loading-container {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}
+
+.loading {
+  font-size: 55px;
+}
+
+.form-edit-profile {
+  align-items: center;
+  background: #eff3f9;
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  width: 85vw;
+}
+
+.form-edit-profile label {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+
+.form-edit-profile input {
+  height: 37px;
+  margin-top: 10px;
+  width: 290px;
+}
+
+.form-edit-profile textarea {
+  height: 100px;
+  margin-top: 10px;
+  width: 490px;
+}
+
+.form-edit-profile button {
+  background: #003be5;
+  border-radius: 100px;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  height: 40px;
+  text-transform: uppercase;
+  width: 100px;
+}
+
+.profile-description {
+  max-width: 550px;
 }
