@@ -52,10 +52,10 @@ class MusicCard extends React.Component {
               </audio>
               <label
                 htmlFor={ music.trackId }
-                data-testid={ `checkbox-music-${music.trackId}` }
               >
                 Favorita
                 <input
+                  data-testid={ `checkbox-music-${music.trackId}` }
                   id={ music.trackId }
                   name={ music.trackId }
                   type="checkbox"
