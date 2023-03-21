@@ -42,7 +42,7 @@ class Search extends React.Component {
     const cards = album.map((element) => (
       <div className="card" key={ element.collectionId }>
         <img alt="Imagem do album" src={ element.artworkUrl100 } />
-        <h3>{element.collectionName}</h3>
+        <h3 className="collection-name">{element.collectionName}</h3>
         <p>{element.artistName}</p>
         <Link
           className="links-musics"

@@ -25,10 +25,11 @@ class Profile extends React.Component {
   render() {
     const { userInfo, loading } = this.state;
     const { name, image, email, description } = userInfo;
+    const img = image || 'https://img.myloview.com.br/adesivos/imagem-de-perfil-padrao-400-131985753.jpg';
     const form = (
       <form className="form-edit-profile">
         <div>
-          <img data-testid="profile-image" src={ image } alt="Foto de perfil" />
+          <img data-testid="profile-image" src={ img } alt="Foto de perfil" />
           <div className="info-card">
             <h3>Nome</h3>
             <p>{name}</p>

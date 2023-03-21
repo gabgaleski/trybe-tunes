@@ -358,3 +358,20 @@ hr {
 .profile-description {
   max-width: 550px;
 }
+
+.form-edit-profile img {
+  border: 1px solid black;
+  border-radius: 240px;
+  filter: drop-shadow(-9px 8px 8px rgba(0, 0, 0, 0.2));
+  height: 250px;
+  width: 250px;
+}
+
+.collection-name {
+  max-width: 200px;
+  margin: 0;
+}
+
+.spinner.is-animating {
+	animation: loading 2s linear infinite;
+}
