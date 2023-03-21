@@ -368,10 +368,6 @@ hr {
 }
 
 .collection-name {
-  max-width: 200px;
   margin: 0;
-}
-
-.spinner.is-animating {
-	animation: loading 2s linear infinite;
+  max-width: 200px;
 }
