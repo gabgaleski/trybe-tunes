@@ -4,6 +4,13 @@
 
 # :camera_flash: Imagens do Projeto
 
+<details>
+  <summary><strong>Imagens</strong></summary><br />
+  
+  <img width="800" alt="Imagem pagina de login" src="./imageReadme/login.png">
+  <img width="800" alt="Imagem pagina wallet" src="./imageReadme/main.png">
+
+</details>
 
 <br>
 
@@ -25,6 +32,7 @@ Projeto Desenvolvido durante o curso da Trybe com foco na manipulação do React
 
 # :scroll: Nota
 
+<img width="700" alt="Imagem pagina wallet" src="./imageReadme/nota.png">
  
 # :construction: To Implement :construction:
 
