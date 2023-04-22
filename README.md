@@ -1,10 +1,31 @@
-# :construction: README em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+# :notes: Trybe Tunes! :notes:
+
+<br>
+
+# :camera_flash: Imagens do Projeto
+
+
+<br>
+
+# :clipboard: About
+Projeto Desenvolvido durante o curso da Trybe com foco na manipulação do React, com react rooters e outras ferramentas. A aplicação exige um login, onde apos ser concluido, vai para a pagina principal que contem as buscas por musica, as musicas favoritas e o perfil do usuario. È possivel adicionar musicas as favoritas, procurar por musicas ou artistas e modificar seu perfil.
+
+
+<br>
+
+# :hammer_and_wrench: Skills & Tools
+
+- HTML5
+- CSS3
+- JavaScript ES6+
+- React.js
+- API
+
+<br>
+
+# :scroll: Nota
+
+ 
+# :construction: To Implement :construction:
+
+- Icon no favoritar / desfavoritas
